@@ -1,5 +1,5 @@
 FROM base/archlinux:latest
-RUN pacman --sync --refresh --sysupgrade
+RUN pacman --sync --refresh --sysupgrade --noconfirm
 RUN pacman -S --needed --noconfirm base-devel
 RUN echo '%adm ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers
 # Plover dependencies.
