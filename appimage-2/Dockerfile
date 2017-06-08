@@ -42,3 +42,7 @@ RUN apt-get install -y \
 	    libdbus-1-dev \
 	    libdbus-glib-1-dev \
 	    ;
+# For PyQt5.
+RUN apt-get install -y \
+	    libgl1-mesa-glx \
+	    ;
