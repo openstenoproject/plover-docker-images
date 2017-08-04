@@ -11,12 +11,6 @@ RUN apt-get install -y \
 	    fuse \
 	    libfuse2 \
 	    ;
-# For building wmctrl.
-RUN apt-get install -y \
-	    libglib2.0-dev \
-	    libx11-dev \
-	    libxmu-dev \
-	    ;
 # For building Python 3.5.
 RUN apt-get install -y \
 	    libbz2-dev \
