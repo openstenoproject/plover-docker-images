@@ -11,10 +11,6 @@ RUN apt-get install -y \
 	    fuse \
 	    libfuse2 \
 	    ;
-# For utils.download.
-RUN apt-get install -y \
-	    python3-requests \
-	    ;
 # For building wmctrl.
 RUN apt-get install -y \
 	    libglib2.0-dev \
