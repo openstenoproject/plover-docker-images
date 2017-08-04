@@ -35,7 +35,17 @@ RUN ./install.sh \
 	    ;
 # For PyQt5.
 RUN ./install.sh \
+	    libasound2 \
+	    libegl1-mesa \
+	    libfontconfig1 \
 	    libgl1-mesa-glx \
+	    libnss3 \
+	    libxcomposite1 \
+	    libxcursor1 \
+	    libxi6 \
+	    libxrandr2 \
+	    libxss1 \
+	    libxtst6 \
 	    ;
 # Cleanup after ourselves...
 RUN rm install.sh
