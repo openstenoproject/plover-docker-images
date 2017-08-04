@@ -1,18 +1,19 @@
 FROM ubuntu:trusty
-RUN apt-get update -y
+ENV DEBIAN_FRONTEND=noninteractive
+RUN printf '#!/bin/sh\nset -x; apt-get update -qqy && apt-get install -qqy "$@"' >install.sh && chmod +x install.sh
 # Build environment.
-RUN apt-get install -y \
+RUN ./install.sh \
 	    build-essential \
 	    ccache \
 	    wget \
 	    ;
 # For AppImage support.
-RUN apt-get install -y \
+RUN ./install.sh \
 	    fuse \
 	    libfuse2 \
 	    ;
 # For building Python 3.5.
-RUN apt-get install -y \
+RUN ./install.sh \
 	    libbz2-dev \
 	    libgdbm-dev \
 	    liblzma-dev \
@@ -23,16 +24,19 @@ RUN apt-get install -y \
 	    zlib1g-dev \
 	    ;
 # For building cython-hidapi.
-RUN apt-get install -y \
+RUN ./install.sh \
 	    libudev-dev \
 	    libusb-1.0-0-dev \
 	    ;
 # For building dbus-python.
-RUN apt-get install -y \
+RUN ./install.sh \
 	    libdbus-1-dev \
 	    libdbus-glib-1-dev \
 	    ;
 # For PyQt5.
-RUN apt-get install -y \
+RUN ./install.sh \
 	    libgl1-mesa-glx \
 	    ;
+# Cleanup after ourselves...
+RUN rm install.sh
+RUN apt-get clean
