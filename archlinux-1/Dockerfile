@@ -16,6 +16,7 @@ RUN pacman -S --needed --noconfirm \
 	    python-setuptools \
 	    python-setuptools-scm \
 	    python-six \
+	    python-wcwidth \
 	    python-xlib \
 	    wmctrl \
 	    ;
