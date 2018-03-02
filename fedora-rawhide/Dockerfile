@@ -15,5 +15,6 @@ RUN dnf -y install \
 	    python3-qt5 \
 	    python3-setuptools \
 	    python3-setuptools_scm \
+	    python3-wcwidth \
 	    python3-xlib \
 	    ;
